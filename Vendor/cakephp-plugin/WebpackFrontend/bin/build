@@ -1,0 +1,38 @@
+const webpack = require('webpack');
+var argv = require('minimist')(process.argv.slice(2));
+
+const webpackMerge = require('webpack-merge');
+const path = require('path');
+
+// Config
+const envConfig = require(path.resolve(argv['webpack-config']));
+const webpackConfig = webpackMerge({
+    // Defaults
+
+    entry: {
+        "index": path.resolve(__dirname, '..', 'Dev', 'src', 'index.js'),
+    },
+    output: {
+        filename: "[name].js",
+        path: path.resolve(__dirname, '..', 'Dev', 'dist'),
+        chunkFilename: "commons.js",
+        publicPath: "/",
+    },
+    mode: 'development',
+}, envConfig);
+console.log(webpackConfig);
+webpack(webpackConfig).run((err, stats) => {
+    if (err) {
+        throw new Error(err);
+    }
+    var jsonStats = stats.toJson();
+    if (jsonStats.errors.length > 0) {
+        throw new Error(jsonStats.errors);
+    }
+
+    if (jsonStats.warnings.length > 0) {
+        throw new Error(jsonStats.warnings);
+    }
+
+    console.log('All done!');
+});

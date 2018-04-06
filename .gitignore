@@ -1,5 +1,5 @@
 Vendor
-
+!Vendor/cakephp-plugin/WebpackFrontend/*/*
 app/Config/database.php
 app/Config/core.php
 
