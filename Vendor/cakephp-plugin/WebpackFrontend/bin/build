@@ -1,5 +1,0 @@
-console.log('Starting build');
-const webpack = require('webpack');
-const webpackConfig = require('./build-config');
-const compileCallback = require('./compile-callback');
-webpack(webpackConfig).run(compileCallback);

@@ -6,6 +6,5 @@ module.exports = {
         path: path.resolve(__dirname, 'private_html', 'dist'),
         chunkFilename: "commons.js",
         publicPath: "/",
-    },
-    mode: 'development',
+    }
 };
