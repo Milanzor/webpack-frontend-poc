@@ -5,3 +5,5 @@ class Home {
 }
 
 new Home();
+
+console.log('asd');

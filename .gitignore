@@ -3,6 +3,7 @@ Vendor
 app/Config/database.php
 app/Config/core.php
 
+node_modules
 uploads/*/*
 !uploads/empty
 app/tmp/cache/cake_*
